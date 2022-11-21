@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing : border-box;
+         }
+
+        body{
+            font-family: "Open Sans";
+            color:antiquewhite;
+
+        }
+        section {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: url("https://i.pinimg.com/originals/39/74/6e/39746eea29ef15a08a05e9365c2d6be4.jpg");
+            backdrop-filter:blur(2px);
+            background-size: cover;
+            background-position: center center;
+        }
+        .form-container{
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background: linear-gradient(rgb(0, 0, 0,0.3),rgb(128, 128, 128));
+            width:380px;
+            padding:50px 30px;
+            backdrop-filter:drop-shadow(4px);
+            border-radius: 16px;
+            box-shadow:7px 7px 65px rgb(0, 0, 0,0.3);
+
+            
+        }
+        h1{
+            text-transform:uppercase;
+            font-size:2em;
+            text-align:center;
+            margin-bottom:2.2em;
+           
+
+        }
+        .control input{
+            
+            width:100%;
+            display:block;
+            padding:10px;
+            color:darkseagreen;
+            border:none;
+            outline:none;
+            -webkit-user-drag: inherit;
+            
+
+        }
+           .control input[type="submit"]{
+               
+               text-transform:uppercase;
+               font-size:1.2em;
+               margin:1em 0;
+               box-shadow: rgb(60, 96, 203);
+              
+           }
+
+           .form-container :hover{
+            transition: ease-in-out ;
+            transition-duration: 1.1s;
+            color: black ;
+            box-shadow:darkblue;
+            margin: 2.8px;
+            border: 3.4px;
+            border-color:antiquewhite;
+            box-sizing: 4.2em;
+           
+           }
+           .control :hover{
+            color: gray;
+            animation: 1.5s;
+            animation-duration: 2s;
+            
+           }
+           .doorClosed{
+            width: 30px;
+            height: 30px;
+            top: 4.7em;
+            position: relative;
+            left: 110px;
+           }
+           .doorOpened{
+            width: 30px;
+            height: 30px;
+            top: 4.7em;
+            position: relative;
+            left: 128px;
+           }
+           
+           
+
+    </style>    
+    <section>
+        <div class="form-container">
+        
+            <h1 id="log">Log in</h1>
+       
+            <br>
+         
+            <form action="#">
+                <div class="control">
+                    <label for="name">Email</label>
+                    <input type="text" name="name" id="mail" />
+                </div>
+                <div class="control">
+                    <label for="psw">Password</label>
+                    <input type="password" name="psw" id="psw" />
+                    
+                </div>
+                <p id="para" style="color: rgb(199, 19, 19);"></p>
+                <span><input type="checkbox" /> remember me.</span>
+                <div class="control">
+                    <input type="button" value="Login" id="logInBt" onclick="Login()" style="background-color:darkslateblue;"/>
+                </div>
+            </form>
+            <div class="link">
+                <a href="#">forgot password</a>
+            </div>
+        </div>
+    </section> 
+<script>
+    function Login(){
+       var pas = document.getElementById("psw").value;
+       var mail = document.getElementById("mail").value;
+        if(pas == "" || mail == ""){
+            document.getElementById("para").innerHTML = "invalid email or password";
+        }
+        else{
+       
+    document.getElementById("log").innerHTML="Logged in";
+    document.getElementById("para").innerHTML = "";
+
+        }
+      
+    }
+</script>
+</body>
+</html>
